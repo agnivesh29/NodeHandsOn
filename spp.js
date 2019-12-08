@@ -26,3 +26,37 @@ console.log('result4 | square of '+3+' is '+ result4);
 
 result5 = funVar5();
 console.log('No arg function: '+result5);
+
+/* Defining a function within an object */
+
+const person = {
+    name: 'Agni',
+    age: 30,
+    /* below approach does not work and is not able to read the property value */
+    // greet: () => {
+    //     console.log('Hi '+this.name);
+    // }
+
+    greet() {
+        console.log('Hi '+this.name);
+    }
+}
+
+person.greet();
+
+/* Using arrays and map function */
+const friends = ['Agni', 'Smith', 'Jack'];
+for(let friend of friends )
+    console.log('Hi '+ friend);
+
+friendsMap = friends.map(function(myFriend) {
+    return 'Welcome '+ myFriend;
+});
+
+anotherFriendsMap = friends.map(friend => {
+    return 'Welcome advance '+friend;
+})
+
+console.log(friendsMap);
+console.log(friends);
+console.log(anotherFriendsMap);
