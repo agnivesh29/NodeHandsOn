@@ -25,4 +25,5 @@ class NameGenerator {
     }
 }
 
+
 const gen = new NameGenerator();

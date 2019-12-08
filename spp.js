@@ -22,7 +22,7 @@ result3 = funVar3(3,4,5);
 console.log('result3 = '+result3);
 
 result4 = funVar4(3);
-console.log('result4 | square of '+3+' = '+ result4);
+console.log('result4 | square of '+3+' is '+ result4);
 
 result5 = funVar5();
 console.log('No arg function: '+result5);
