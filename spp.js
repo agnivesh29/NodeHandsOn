@@ -60,3 +60,27 @@ anotherFriendsMap = friends.map(friend => {
 console.log(friendsMap);
 console.log(friends);
 console.log(anotherFriendsMap);
+
+/* spread and rest operator */
+// spread operator extracts items in an array or object
+
+const originalArr = ['a', 'b', 'c'];
+const arrayUsingSpread = [...originalArr];
+
+console.log(arrayUsingSpread);
+
+const originalObject = {
+    name: 'Agni',
+    age: '30'
+}
+
+const objCreatedWithSpread = {...originalObject};
+console.log(objCreatedWithSpread);
+
+// rest operator merges the items into an array
+
+const func = (...args) => {
+    return args;
+}
+
+console.log(func(1,2,3));
