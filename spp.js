@@ -84,3 +84,36 @@ const func = (...args) => {
 }
 
 console.log(func(1,2,3));
+
+// destructuring - object and array
+const personObj = {
+    name: 'Agni',
+    age: '30',
+    dob: '17031989',
+    mobile: '0456456456',
+    education: {
+        tenth: '80%',
+        twelfth: '68%',
+        grads: '70%' 
+    }
+}
+
+const destructFunc = ({name, mobile, education}) => {
+    console.log(name);
+    console.log(mobile);
+    console.log(education.tenth);
+}
+
+destructFunc(personObj);
+
+// object initialisation using object destructuring
+const {name, age, education} = personObj
+console.log('name: '+name);
+console.log('age: '+age);
+console.log('grad score: '+ education.grads);
+
+// Arrays can also be destructured
+const nameArray = ['Agni', 'Abi', 'John']
+const [name1, name2] = nameArray;
+
+console.log(name1, name2); // destructs element from array
