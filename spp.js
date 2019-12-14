@@ -62,6 +62,8 @@ console.log(friends);
 console.log(anotherFriendsMap);
 
 /* spread and rest operator */
+console.log('');
+console.log('*************** spread and rest operator ***************');
 // spread operator extracts items in an array or object
 
 const originalArr = ['a', 'b', 'c'];
@@ -86,6 +88,8 @@ const func = (...args) => {
 console.log(func(1,2,3));
 
 // destructuring - object and array
+console.log('');
+console.log('*************** destructuring - object and array ***************');
 const personObj = {
     name: 'Agni',
     age: '30',
@@ -107,6 +111,8 @@ const destructFunc = ({name, mobile, education}) => {
 destructFunc(personObj);
 
 // object initialisation using object destructuring
+console.log('');
+console.log('*************** object/array initialisation using object/array destructuring ***************');
 const {name, age, education} = personObj
 console.log('name: '+name);
 console.log('age: '+age);
@@ -117,3 +123,51 @@ const nameArray = ['Agni', 'Abi', 'John']
 const [name1, name2] = nameArray;
 
 console.log(name1, name2); // destructs element from array
+
+/* Promise & async call in JavaScript */
+
+// Using async call w/o using Promise object
+console.log('');
+console.log('*************** Using async call w/o using Promise object ***************');
+
+const asyncFunc = callback => {
+    //console.log('Inside async function');
+    setTimeout(function() {
+        callback('Callback from asyncFunc');
+    }, 1000);
+}
+
+setTimeout(function(){
+    console.log('Trigger function');
+    asyncFunc(text => {
+        console.log(text);
+    })
+}, 1000);
+
+// Problem with above approach is as we have more async call that are part of dependency, the nested callback will go deeper and deeper
+
+// Using a Promise object to resolve async call
+console.log('');
+console.log('*************** Using a Promise object to resolve async call ***************');
+
+const fetchData = () => {
+    const promise = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve('callback complete with a Promise object');
+        }, 1500)
+    });
+    return promise;
+}
+
+setTimeout(() => {
+    fetchData()
+        .then(arg => {
+            console.log(arg);
+            return fetchData();            
+        })
+        .then(arg => {
+            console.log(arg);
+        });
+}, 2000);
+
+  
