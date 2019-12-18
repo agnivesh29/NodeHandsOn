@@ -1,6 +1,7 @@
-import { createServer } from 'http';
-import route from './route.js';
+const http =  require('http');
+const route = require('./route.js');
 
-const nodeServer = createServer(route);
+const nodeServer = http.createServer(route);
 
 nodeServer.listen(8000);
+
