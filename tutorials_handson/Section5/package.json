@@ -1,7 +1,7 @@
 {
-  "name": "udemy-node-handson",
+  "name": "sec5handson",
   "version": "1.0.0",
-  "description": "",
+  "description": "hands-on exercises from section 5.",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,6 +9,9 @@
   },
   "author": "Agnivesh",
   "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
   "devDependencies": {
     "nodemon": "^2.0.2"
   }
