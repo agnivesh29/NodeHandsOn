@@ -1,10 +1,10 @@
-const http = require('http');
+// const http = require('http');
 
 const express = require('express');
 
 const app = express();
 
-http.createServer(app);
+// http.createServer(app);
 
 app.use('/users', (request, response, next) => {
     console.log('middleware handler for /users endpoint');
